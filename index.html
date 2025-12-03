@@ -39,6 +39,58 @@
       padding: 32px 20px 48px;
     }
 
+    /* TOP NAV (shared with systems.html) */
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .nav-left {
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-muted);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-link.active {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
     header {
       margin-bottom: 32px;
     }
@@ -251,6 +303,16 @@
 </head>
 <body>
   <div class="page">
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-left">LUKE ROTH</div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="systems.html" class="nav-link">Systems &amp; Innovation</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+
     <!-- HERO -->
     <header>
       <div class="pill">Systems Architecture & Applied Design</div>
@@ -261,7 +323,7 @@
         in high-volume environments.
       </p>
       <div class="hero-actions">
-        <a href="/systems.html" class="btn-primary">Systems &amp; Innovation</a>
+        <a href="systems.html" class="btn-primary">Systems &amp; Innovation</a>
         <a href="#contact" class="btn-secondary">Contact</a>
       </div>
       <div class="hero-meta">
@@ -319,7 +381,7 @@
 
       <!-- RIGHT COLUMN -->
       <aside>
-        <!-- CURRENT WORK / ELUTRUM-FRIENDLY BLURB -->
+        <!-- CURRENT WORK -->
         <section class="card">
           <h2>Current Work</h2>
           <p class="muted">
