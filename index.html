@@ -25,13 +25,13 @@
     }
 
     body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top left, #FFF9F0 0, #F5F1E8 45%, #EDE3D4 100%);
-  color: var(--text-main);
-  line-height: 1.6;
-}
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #FFF9F0 0, #F5F1E8 45%, #EDE3D4 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
     .page {
       max-width: 1040px;
@@ -48,8 +48,8 @@
       align-items: center;
       padding: 4px 12px;
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
+      background: #D7E1FF;   /* higher-contrast pill background */
+      color: #1C3ABF;        /* deeper blue text for accessibility */
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -169,9 +169,9 @@
     }
 
     .card ul li {
-  color: var(--text-muted);
-  font-size: 13px;
-  line-height: 1.55;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.55;
     }
 
     h2 {
@@ -246,6 +246,7 @@
       color: var(--accent);
       text-decoration: underline;
     }
+
     footer {
       margin-top: 32px;
       font-size: 12px;
@@ -275,7 +276,7 @@
   <div class="page" id="top">
     <!-- HERO -->
     <header>
-      <div class="pill">Systems Architecture & Applied Design</div>
+      <div class="pill">Systems Architecture &amp; Applied Design</div>
       <h1 class="name">Luke Roth</h1>
       <p class="role">Independent Systems Architect &amp; Inventor</p>
       <p class="hero-sub">
@@ -284,7 +285,7 @@
       </p>
       <div class="hero-actions">
         <a href="#systems" class="btn-primary">Systems &amp; Innovation</a>
-        <a href="#research" class="btn-secondary">Research &amp; Interests </a>
+        <a href="#research" class="btn-secondary">Research &amp; Interests</a>
         <a href="#contact" class="btn-secondary">Contact</a>
       </div>
       <div class="hero-meta">
@@ -292,114 +293,118 @@
       </div>
     </header>
 
-    <div class="divider"></div>
+    <main>
+      <div class="divider"></div>
 
-    <div class="grid">
-      <!-- LEFT COLUMN -->
-      <div>
-        <!-- POSITIONING -->
-        <section class="card" id="systems">
-          <h2>Designing Modern Systems for Real-World Complexity</h2>
-          <p>
-            I build frameworks that help teams operate with greater clarity, speed, and consistency. By combining practical operational experience with structured systems design, I focus on solutions that improve performance while keeping workflows transparent and operator-centered.
-          </p>
-        </section>
+      <div class="grid">
+        <!-- LEFT COLUMN -->
+        <div>
+          <!-- POSITIONING -->
+          <section class="card" id="systems">
+            <h2>Designing Modern Systems for Real-World Complexity</h2>
+            <p>
+              I build frameworks that help teams operate with greater clarity, speed, and consistency.
+              By combining practical operational experience with structured systems design, I focus on
+              solutions that improve performance while keeping workflows transparent and operator-centered.
+            </p>
+          </section>
 
-        <!-- CORE DOMAINS -->
-        <section class="card">
-          <h2>Core Domains</h2>
-          <div class="domain-list">
-            <div>
-              <div class="domain-item-title">Systems Design &amp; Optimization</div>
-              <div class="domain-item-text">
-                Designing modular frameworks that improve clarity, speed, and reliability in real-world environments.
+          <!-- CORE DOMAINS -->
+          <section class="card">
+            <h2>Core Domains</h2>
+            <div class="domain-list">
+              <div>
+                <div class="domain-item-title">Systems Design &amp; Optimization</div>
+                <div class="domain-item-text">
+                  Designing modular frameworks that improve clarity, speed, and reliability in real-world environments.
+                </div>
+              </div>
+              <div>
+                <div class="domain-item-title">Human-Centered Automation</div>
+                <div class="domain-item-text">
+                  Creating tools and architectures that support operators without replacing them or increasing surveillance.
+                </div>
+              </div>
+              <div>
+                <div class="domain-item-title">Privacy-Respecting Technology</div>
+                <div class="domain-item-text">
+                  Building solutions that prioritize minimal data retention, local control, and user trust.
+                </div>
+              </div>
+              <div>
+                <div class="domain-item-title">Operational Integrity &amp; Transparency</div>
+                <div class="domain-item-text">
+                  Exploring ways to strengthen consistency, quality assurance, and customer confidence
+                  across high-volume workflows.
+                </div>
               </div>
             </div>
-            <div>
-              <div class="domain-item-title">Human-Centered Automation</div>
-              <div class="domain-item-text">
-                Creating tools and architectures that support operators without replacing them or increasing surveillance.
-              </div>
-            </div>
-            <div>
-              <div class="domain-item-title">Privacy-Respecting Technology</div>
-              <div class="domain-item-text">
-                Building solutions that prioritize minimal data retention, local control, and user trust.
-              </div>
-            </div>
-            <div>
-              <div class="domain-item-title">Operational Integrity &amp; Transparency</div>
-              <div class="domain-item-text">
-                Exploring ways to strengthen consistency, quality assurance, and customer confidence
-                across high-volume workflows.
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <aside>
+          <!-- CURRENT WORK / ELUTRUM-FRIENDLY BLURB -->
+          <section class="card">
+            <h2>Current Work</h2>
+            <p class="muted">
+              I’m currently developing systems that combine deterministic orchestration, privacy-forward compute,
+              and human-centered automation to support safer, more transparent tooling in technical and operational settings.
+            </p>
+            <p class="muted">
+              Details of active projects and intellectual property are shared privately under NDA.
+            </p>
+          </section>
+
+          <section class="card" id="research">
+            <h2>Research &amp; Interests</h2>
+            <p class="muted">
+              My work focuses on how operational systems, automation, and workflow design influence
+              performance and decision-making in high-volume environments. I study how technical
+              architectures affect accuracy, transparency, and reliability in everyday processes,
+              particularly in settings where small design choices have large operational impact.
+            </p>
+            <p class="muted">
+              Areas of interest include:
+            </p>
+            <ul>
+              <li>High-throughput operational system design</li>
+              <li>Privacy-respecting automation and verification</li>
+              <li>Reliability and variance analysis in algorithmic tools</li>
+              <li>Institutional workflow design, governance, and decision architecture</li>
+            </ul>
+            <p class="muted">
+              Selected publication:
+            </p>
+            <p>
+              <strong>Detector Disparities: Constitutional and Civil Rights Implications of AI Detectors (2025)</strong><br>
+              <span class="muted">
+                A systems-level risk analysis of algorithmic decision tools in U.S. educational environments.
+              </span><br>
+              <a class="simple-link" href="https://doi.org/10.5281/zenodo.15814284" target="_blank" rel="noopener noreferrer">
+                View on Zenodo
+              </a>
+            </p>
+            <a href="#top" class="top-link">Back to top</a>
+          </section>
+
+          <!-- CONTACT -->
+          <section class="card" id="contact">
+            <h2>Contact</h2>
+            <p class="muted">
+              For professional inquiries, confidential discussions, or exploratory conversations around system design:
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a class="simple-link" href="mailto:luke@lroth.com">luke@lroth.com</a>
+            </p>
+            <p class="muted">
+              Time zone: Eastern (US). Remote collaboration welcome.
+            </p>
+          </section>
+        </aside>
       </div>
-
-      <!-- RIGHT COLUMN -->
-      <aside>
-        <!-- CURRENT WORK / ELUTRUM-FRIENDLY BLURB -->
-        <section class="card">
-          <h2>Current Work</h2>
-          <p class="muted">
-            I’m currently developing systems that combine deterministic orchestration, privacy-forward compute,
-            and human-centered automation to support safer, more transparent tooling in technical and operational settings.
-          </p>
-          <p class="muted">
-            Details of active projects and intellectual property are shared privately under NDA.
-          </p>
-        </section>
-
-        <section class="card" id="research">
-  <h2>Research &amp; Interests</h2>
-  <p class="muted">
-    My work focuses on how operational systems, automation, and workflow design influence
-    performance and decision-making in high-volume environments. I study how technical
-    architectures affect accuracy, transparency, and reliability in everyday processes,
-    particularly in settings where small design choices have large operational impact.
-  </p>
-  <p class="muted">
-    Areas of interest include:
-  </p>
-  <ul>
-    <li>High-throughput operational system design</li>
-    <li>Privacy-respecting automation and verification</li>
-    <li>Reliability and variance analysis in algorithmic tools</li>
-    <li>Institutional workflow design, governance, and decision architecture</li>
-  </ul>
-  <p class="muted">
-    Selected publication:
-  </p>
-  <p>
-    <strong>Detector Disparities: Constitutional and Civil Rights Implications of AI Detectors (2025)</strong><br>
-    <span class="muted">
-      A systems-level risk analysis of algorithmic decision tools in U.S. educational environments.
-    </span><br>
-    <a class="simple-link" href="https://doi.org/10.5281/zenodo.15814284" target="_blank" rel="noopener noreferrer">
-      View on Zenodo
-    </a>
-  </p>
-  <a href="#top" class="top-link">Back to top</a>
-</section>
-
-        <!-- CONTACT -->
-        <section class="card" id="contact">
-          <h2>Contact</h2>
-          <p class="muted">
-            For professional inquiries, confidential discussions, or exploratory conversations around system design:
-          </p>
-          <p>
-            <strong>Email:</strong>
-            <a class="simple-link" href="mailto:luke@lroth.com">luke@lroth.com</a>
-          </p>
-          <p class="muted">
-            Time zone: Eastern (US). Remote collaboration welcome.
-          </p>
-        </section>
-      </aside>
-    </div>
+    </main>
 
     <footer>
       <span>&copy; <span id="year"></span> Luke Roth. All rights reserved.</span>
