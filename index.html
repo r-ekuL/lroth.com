@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luke Roth — Systems Architect & Inventor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luke Roth — independent systems architect and inventor designing modular, privacy-forward systems for real-world operations.">
+  <style>
+    :root {
+      /* Palette: Modern Tech Minimal */
+      --bg: #FAFAFA;
+      --card-bg: #FFFCF7;
+      --text-main: #1F1F1F;
+      --text-muted: #6A707A;
+      --accent: #275DF7;       /* Blueprint Blue */
+      --accent-soft: #E2E8FF;
+      --accent-secondary: #18B7A0; /* Teal accent (light sparing use) */
+      --border-soft: #E1E4EB;
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #FFF9F0 0, #F5F1E8 45%, #EDE3D4 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #D7E1FF;   /* higher-contrast pill background */
+      color: #1C3ABF;        /* deeper blue text for accessibility */
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .name {
+      font-size: clamp(32px, 5vw, 40px);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin: 0 0 6px;
+    }
+
+    .role {
+      margin: 0 0 14px;
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .hero-sub {
+      max-width: 640px;
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.08s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #FFFFFF;
+      box-shadow: 0 8px 18px rgba(39, 93, 247, 0.35);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 10px 24px rgba(39, 93, 247, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--text-main);
+      border-color: var(--border-soft);
+    }
+
+    .btn-secondary:hover {
+      background: #FFFFFF;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0,
+        rgba(148, 163, 184, 0.6) 15%,
+        rgba(148, 163, 184, 0.3) 65%,
+        transparent 100%
+      );
+      margin: 26px 0 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    section {
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card ul li {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #141820;
+    }
+
+    p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .domain-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px 18px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 720px) {
+      .domain-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .domain-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #151820;
+    }
+
+    .domain-item-text {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .cta-inline {
+      font-size: 13px;
+      margin-top: 8px;
+      color: var(--text-muted);
+    }
+
+    .cta-inline a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .cta-inline a:hover {
+      text-decoration: underline;
+    }
+
+    .top-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .top-link::before {
+      content: "↑ ";
+    }
+
+    .top-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 6px;
+    }
+
+    footer span {
+      opacity: 0.9;
+    }
+
+    a.simple-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.simple-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="top">
+    <!-- HERO -->
+    <header>
+      <div class="pill">Systems Architecture &amp; Applied Design</div>
+      <h1 class="name">Luke Roth</h1>
+      <p class="role">Independent Systems Architect &amp; Inventor</p>
+      <p class="hero-sub">
+        I design modular, privacy-forward systems that improve clarity, speed, and trust
+        in high-volume environments.
+      </p>
+      <div class="hero-actions">
+        <a href="#systems" class="btn-primary">Systems &amp; Innovation</a>
+        <a href="#research" class="btn-secondary">Research &amp; Interests</a>
+        <a href="#contact" class="btn-secondary">Contact</a>
+      </div>
+      <div class="hero-meta">
+        Based in New York · Working across AI tooling, operational systems, and verification frameworks.
+      </div>
+    </header>
+
+    <main>
+      <div class="divider"></div>
+
+      <div class="grid">
+        <!-- LEFT COLUMN -->
+        <div>
+          <!-- POSITIONING -->
+          <section class="card" id="systems">
+            <h2>Designing Modern Systems for Real-World Complexity</h2>
+            <p>
+              I build frameworks that help teams operate with greater clarity, speed, and consistency.
+              By combining practical operational experience with structured systems design, I focus on
+              solutions that improve performance while keeping workflows transparent and operator-centered.
+            </p>
+          </section>
+
+          <!-- CORE DOMAINS -->
+          <section class="card">
+            <h2>Core Domains</h2>
+            <div class="domain-list">
+              <div>
+                <div class="domain-item-title">Systems Design &amp; Optimization</div>
+                <div class="domain-item-text">
+                  Designing modular frameworks that improve clarity, speed, and reliability in real-world environments.
+                </div>
+              </div>
+              <div>
+                <div class="domain-item-title">Human-Centered Automation</div>
+                <div class="domain-item-text">
+                  Creating tools and architectures that support operators without replacing them or increasing surveillance.
+                </div>
+              </div>
+              <div>
+                <div class="domain-item-title">Privacy-Respecting Technology</div>
+                <div class="domain-item-text">
+                  Building solutions that prioritize minimal data retention, local control, and user trust.
+                </div>
+              </div>
+              <div>
+                <div class="domain-item-title">Operational Integrity &amp; Transparency</div>
+                <div class="domain-item-text">
+                  Exploring ways to strengthen consistency, quality assurance, and customer confidence
+                  across high-volume workflows.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <aside>
+          <!-- CURRENT WORK / ELUTRUM-FRIENDLY BLURB -->
+          <section class="card">
+            <h2>Current Work</h2>
+            <p class="muted">
+              I’m currently developing systems that combine deterministic orchestration, privacy-forward compute,
+              and human-centered automation to support safer, more transparent tooling in technical and operational settings.
+            </p>
+            <p class="muted">
+              Details of active projects and intellectual property are shared privately under NDA.
+            </p>
+          </section>
+
+          <section class="card" id="research">
+            <h2>Research &amp; Interests</h2>
+            <p class="muted">
+              My work focuses on how operational systems, automation, and workflow design influence
+              performance and decision-making in high-volume environments. I study how technical
+              architectures affect accuracy, transparency, and reliability in everyday processes,
+              particularly in settings where small design choices have large operational impact.
+            </p>
+            <p class="muted">
+              Areas of interest include:
+            </p>
+            <ul>
+              <li>High-throughput operational system design</li>
+              <li>Privacy-respecting automation and verification</li>
+              <li>Reliability and variance analysis in algorithmic tools</li>
+              <li>Institutional workflow design, governance, and decision architecture</li>
+            </ul>
+            <p class="muted">
+              Selected publication:
+            </p>
+            <p>
+              <strong>Detector Disparities: Constitutional and Civil Rights Implications of AI Detectors (2025)</strong><br>
+              <span class="muted">
+                A systems-level risk analysis of algorithmic decision tools in U.S. educational environments.
+              </span><br>
+              <a class="simple-link" href="https://doi.org/10.5281/zenodo.15814284" target="_blank" rel="noopener noreferrer">
+                View on Zenodo
+              </a>
+            </p>
+            <a href="#top" class="top-link">Back to top</a>
+          </section>
+
+          <!-- CONTACT -->
+          <section class="card" id="contact">
+            <h2>Contact</h2>
+            <p class="muted">
+              For professional inquiries, confidential discussions, or exploratory conversations around system design:
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a class="simple-link" href="mailto:luke@lroth.com">luke@lroth.com</a>
+            </p>
+            <p class="muted">
+              Time zone: Eastern (US). Remote collaboration welcome.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <span>&copy; <span id="year"></span> Luke Roth. All rights reserved.</span>
+      <span>lroth.com</span>
+    </footer>
+  </div>
+
+  <script>
+    // Auto-set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
