@@ -269,38 +269,6 @@
 
     a.simple-link:hover {
       text-decoration: underline;
-
-      /* Desktop-only reordering of grid content */
-@media (min-width: 801px) {
-  #systems {
-    grid-row: 1;
-    grid-column: 1; /* left */
-  }
-
-  /* Core Domains */
-  #systems + section {
-    grid-row: 2;
-    grid-column: 1; /* left */
-  }
-
-  /* Current Work */
-  aside > section:nth-child(1) {
-    grid-row: 3;
-    grid-column: 1; /* move to left side */
-  }
-
-  /* Research & Interests */
-  #research {
-    grid-row: 1;
-    grid-column: 2; /* move to top right */
-  }
-
-  /* Contact */
-  #contact {
-    grid-row: 2;
-    grid-column: 2; /* directly below Research */
-  }
-}
       
     }
   </style>
